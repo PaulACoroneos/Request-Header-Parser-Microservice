@@ -31,7 +31,7 @@ router.get("/api/hello", function (req, res) {
 });
 
 router.get("/api/whoami", function (req, res) {
-  res.json({ipaddress: req.connection.remoteAddress, language:req.headers["accept-language"], software:req.headers["user-agent"]});
+  res.json({ipaddress: req.ip, language:req.headers["accept-language"], software:req.headers["user-agent"]});
 });
 
 app.use("/.netlify/functions/server", router); // path must route to lambda
